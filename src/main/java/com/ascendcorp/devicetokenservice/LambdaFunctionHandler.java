@@ -8,7 +8,6 @@ import java.sql.Statement;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.ascendcorp.snspushnotification.RequestObject;
 
 
 public class LambdaFunctionHandler implements RequestHandler<RequestObject, String> {
@@ -18,7 +17,7 @@ public class LambdaFunctionHandler implements RequestHandler<RequestObject, Stri
     	if(context != null)
     		context.getLogger().log("Input: " + input);
     	queryDatabase();
-    	return "SUCCESS";
+    	return "SUCCESS SUCCESS";
     }
     
     public static void main(String[] args) {
