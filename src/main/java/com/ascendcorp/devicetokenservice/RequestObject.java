@@ -1,41 +1,42 @@
 package com.ascendcorp.devicetokenservice;
 
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestObject{
 	
+	@Override
+	public String toString() {
+		return "RequestObject [phone=" + phone + ", textMessage=" + textMessage + "]";
+	}
+	
+	@JsonProperty("phone")
 	String phone;
-	String walletId;
-	String deviceId;
-	String os;
-
+	@JsonProperty("textMessage")
+	String textMessage;
+	
+	public RequestObject() {
+	}
+	
+	public RequestObject(String phone, String textMessage) {
+		this.phone = phone;
+		this.textMessage = textMessage;
+	}
+	
 	public String getPhone() {
 		return phone;
 	}
-
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-	public String getWalletId() {
-		return walletId;
+	public String getTextMessage() {
+		return textMessage;
 	}
-
-	public void setWalletId(String walletId) {
-		this.walletId = walletId;
-	}
-
-	public String getDeviceId() {
-		return deviceId;
-	}
-
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
-	}
-
-	public String getOs() {
-		return os;
-	}
-
-	public void setOs(String os) {
-		this.os = os;
+	public void setTextMessage(String textMessage) {
+		this.textMessage = textMessage;
 	}
 }
